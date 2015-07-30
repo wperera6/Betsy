@@ -1,28 +1,26 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
-  # GET /listings
-  # GET /listings.json
+
   def index
     @listings = Listing.all
   end
 
-  # GET /listings/1
-  # GET /listings/1.json
+ 
   def show
+  
   end
 
-  # GET /listings/new
+  # new listing
   def new
     @listing = Listing.new
   end
 
-  # GET /listings/1/edit
   def edit
+
   end
 
-  # POST /listings
-  # POST /listings.json
+
   def create
     @listing = Listing.new(listing_params)
 
@@ -37,8 +35,6 @@ class ListingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /listings/1
-  # PATCH/PUT /listings/1.json
   def update
     respond_to do |format|
       if @listing.update(listing_params)
@@ -51,12 +47,11 @@ class ListingsController < ApplicationController
     end
   end
 
-  # DELETE /listings/1
-  # DELETE /listings/1.json
+
   def destroy
     @listing.destroy
     respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
+      format.html { redirect_to listings_url, notice: 'Listing was successfully deleted.' }
       format.json { head :no_content }
     end
   end
