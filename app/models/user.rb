@@ -7,10 +7,5 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  
-  # validation temp removed 
-  validates :name, :presence => true 
-
-
 
 end
