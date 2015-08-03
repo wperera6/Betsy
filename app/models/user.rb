@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  #***name validation temp removed**** 
-  # validates :name, :presence => true 
+  # validation temp removed 
+  validates :name, :presence => true 
 
 
 
