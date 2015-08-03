@@ -1,3 +1,4 @@
+
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
@@ -23,6 +24,8 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    # sets lising id to current user id 
+    @listing.user_id = current_user.id
 
     respond_to do |format|
       if @listing.save
@@ -34,6 +37,8 @@ class ListingsController < ApplicationController
       end
     end
   end
+
+
 
   def update
     respond_to do |format|
